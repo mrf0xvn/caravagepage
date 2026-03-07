@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Caravage</title>
+    <meta name="description"
+        content="Contact Caravage. We welcome inquiries from sophisticated investors and potential partners. Offices in Paris and Zurich." />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .contact-intro {
+            position: sticky;
+            top: 8rem;
+        }
+
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-info-label {
+            font-size: var(--size-xs);
+            font-weight: 500;
+            letter-spacing: var(--tracking-widest);
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-value {
+            font-family: var(--font-serif);
+            font-size: 1.125rem;
+            color: var(--color-navy);
+        }
+
+        .contact-info-detail {
+            font-size: var(--size-sm);
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .inquiry-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .inquiry-radio {
+            display: none;
+        }
+
+        .inquiry-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            cursor: pointer;
+            font-size: var(--size-xs);
+            font-weight: 500;
+            letter-spacing: var(--tracking-wider);
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            transition: all var(--transition);
+            text-align: center;
+        }
+
+        .inquiry-radio:checked+.inquiry-label {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            border-color: var(--color-navy);
+        }
+
+        .inquiry-label:hover {
+            border-color: var(--color-navy);
+            color: var(--color-navy);
+        }
+
+        .offices-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .form-submit-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .form-disclaimer {
+            font-size: var(--size-xs);
+            color: var(--color-text-muted);
+            font-weight: 300;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .contact-intro {
+                position: static;
+            }
+
+            .offices-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav">
+        <a href="index.html" class="nav-logo">
+            <img src="logo.svg" alt="Caravage Logo" class="nav-logo-img" />
+            <div class="nav-logo-divider"></div>
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">Caravage</span>
+                <span class="nav-logo-tagline">The Art of Investing</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="about.html" class="nav-link" data-page="about.html">About</a>
+            <a href="philosophy.html" class="nav-link" data-page="philosophy.html">Philosophy</a>
+            <a href="assets.html" class="nav-link" data-page="assets.html">Asset Classes</a>
+            <a href="portfolio.html" class="nav-link" data-page="portfolio.html">Portfolio</a>
+            <a href="insights.html" class="nav-link" data-page="insights.html">Insights</a>
+            <a href="contact.html" class="nav-link active" data-page="contact.html">Contact</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="nav-mobile" id="mobile-nav">
+        <button class="nav-mobile-close" id="mobile-close">✕</button>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="philosophy.html" class="nav-link">Philosophy</a>
+        <a href="assets.html" class="nav-link">Asset Classes</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+        <div class="container--text">
+            <span class="label reveal">Reach Out</span>
+            <h1 class="reveal reveal-delay-1">Get In Touch</h1>
+            <p class="reveal reveal-delay-2">
+                We welcome inquiries from sophisticated investors, potential partners, and those genuinely interested in
+                our approach to multi-generational wealth preservation.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT FORM + INFO ===== -->
+    <section class="section" style="background-color: var(--color-white);">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- Left: Info -->
+                <div class="contact-intro reveal">
+                    <div class="divider divider--left"></div>
+                    <h2 style="margin-bottom: 1.5rem;">We'd Like to Hear From You</h2>
+                    <p>Whether you're exploring an investment partnership, have a specific inquiry about our portfolio,
+                        or simply want to understand our approach better — we're glad to start the conversation.</p>
+                    <p style="margin-top: 1rem;">We aim to respond to all serious inquiries within two business days.
+                    </p>
+
+                    <div class="contact-info-block">
+                        <div style="width: 40px; height: 1px; background: var(--color-border);"></div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-label">Paris</div>
+                            <div class="contact-info-value">8 Rue de la Paix</div>
+                            <div class="contact-info-detail">75002 Paris, France</div>
+                            <div class="contact-info-detail" style="margin-top: 0.35rem;">paris@caravage.ch</div>
+                        </div>
+
+                        <div style="width: 40px; height: 1px; background: var(--color-border);"></div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-label">Zurich</div>
+                            <div class="contact-info-value">Bahnhofstrasse 12</div>
+                            <div class="contact-info-detail">8001 Zurich, Switzerland</div>
+                            <div class="contact-info-detail" style="margin-top: 0.35rem;">zurich@caravage.ch</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="reveal reveal-delay-1">
+                    <form class="contact-form" id="contact-form" novalidate>
+
+                        <!-- Inquiry type -->
+                        <div class="form-group">
+                            <label class="form-label">Nature of Inquiry</label>
+                            <div class="inquiry-types">
+                                <div>
+                                    <input type="radio" name="inquiry" id="inq-investment" value="Investment"
+                                        class="inquiry-radio" checked>
+                                    <label for="inq-investment" class="inquiry-label">Investment</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="inquiry" id="inq-partnership" value="Partnership"
+                                        class="inquiry-radio">
+                                    <label for="inq-partnership" class="inquiry-label">Partnership</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="inquiry" id="inq-media" value="Media"
+                                        class="inquiry-radio">
+                                    <label for="inq-media" class="inquiry-label">Media</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="inquiry" id="inq-other" value="Other"
+                                        class="inquiry-radio">
+                                    <label for="inq-other" class="inquiry-label">Other</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Name + Company -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Your full name"
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="company">Organisation</label>
+                                <input type="text" id="company" name="company" class="form-input"
+                                    placeholder="Company or fund name" />
+                            </div>
+                        </div>
+
+                        <!-- Email + Phone -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="your@email.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone (Optional)</label>
+                                <input type="tel" id="phone" name="phone" class="form-input"
+                                    placeholder="+33 or +41 ..." />
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label class="form-label" for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Please share the context of your inquiry..." required></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-submit-area">
+                            <button type="submit" class="btn btn--primary" id="submit-btn">Send Message</button>
+                            <p class="form-disclaimer">By submitting, you agree to our privacy policy. We will only use
+                                your information to respond to your inquiry.</p>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OFFICES ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Where To Find Us</span>
+                <h2>Our Offices</h2>
+            </div>
+
+            <div class="offices-grid reveal">
+                <div class="office-item">
+                    <div class="office-city">Paris</div>
+                    <div class="office-details">
+                        <span class="office-detail">8 Rue de la Paix</span>
+                        <span class="office-detail">75002 Paris, France</span>
+                        <span class="office-detail" style="margin-top: 1rem;">+33 1 XX XX XX XX</span>
+                        <span class="office-detail">paris@caravage.ch</span>
+                        <span class="office-detail" style="margin-top: 1rem; font-style: italic;">Mon–Fri, 9:00–18:00
+                            CET</span>
+                    </div>
+                </div>
+                <div class="office-item reveal reveal-delay-1">
+                    <div class="office-city">Zurich</div>
+                    <div class="office-details">
+                        <span class="office-detail">Bahnhofstrasse 12</span>
+                        <span class="office-detail">8001 Zurich, Switzerland</span>
+                        <span class="office-detail" style="margin-top: 1rem;">+41 44 XXX XX XX</span>
+                        <span class="office-detail">zurich@caravage.ch</span>
+                        <span class="office-detail" style="margin-top: 1rem; font-style: italic;">Mon–Fri, 9:00–18:00
+                            CET</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo-white.svg" alt="Caravage Logo" class="footer-logo-img" />
+                        <span class="footer-logo-name">Caravage</span>
+                    </div>
+                    <p class="footer-tagline">The Art of Investing</p>
+                    <p
+                        style="font-size: 0.75rem; color: rgba(255,255,255,0.35); font-weight: 300; max-width: 260px; margin-top: 0.75rem; line-height: 1.7;">
+                        Multi-generational wealth preservation through strategic capital allocation.</p>
+                </div>
+                <div class="footer-offices">
+                    <div class="footer-office">
+                        <div class="footer-location-city">Paris</div>
+                        <div class="footer-location-detail">8 Rue de la Paix<br>75002 Paris,
+                            France<br><br>paris@caravage.ch</div>
+                    </div>
+                    <div class="footer-office">
+                        <div class="footer-location-city">Zurich</div>
+                        <div class="footer-location-detail">Bahnhofstrasse 12<br>8001 Zurich,
+                            Switzerland<br><br>zurich@caravage.ch</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom-row">
+                <nav class="footer-nav">
+                    <a href="about.html" class="footer-nav-link">About</a>
+                    <a href="philosophy.html" class="footer-nav-link">Philosophy</a>
+                    <a href="assets.html" class="footer-nav-link">Asset Classes</a>
+                    <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
+                    <a href="insights.html" class="footer-nav-link">Insights</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+                <div class="footer-bottom-right">
+                    <p class="footer-copyright">© 2026 Caravage. All Rights Reserved.</p>
+                    <div class="footer-sub-links">
+                        <a href="#" class="footer-sub-link">Privacy</a>
+                        <a href="#" class="footer-sub-link">Legal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

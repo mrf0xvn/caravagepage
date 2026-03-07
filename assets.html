@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asset Classes — Caravage</title>
+    <meta name="description"
+        content="Caravage invests in Real Estate (Core, Value-Add, Opportunistic) and Alternative Investments (Private Equity, Private Credit, Real Assets)." />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        .asset-hero {
+            background-color: var(--color-navy-dark);
+        }
+
+        .asset-hero .page-hero {
+            padding-bottom: 8rem;
+        }
+
+        .asset-hero h1 {
+            color: white;
+        }
+
+        .asset-hero p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .asset-hero .label {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .spectrum-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2px;
+            background-color: var(--color-border);
+            border: 1.5px solid var(--color-border);
+        }
+
+        .spectrum-item {
+            padding: 2.5rem 2rem;
+            background-color: var(--color-white);
+            transition: background-color var(--transition);
+        }
+
+        .spectrum-item:hover {
+            background-color: var(--color-navy-dark);
+        }
+
+        .spectrum-item:hover h4,
+        .spectrum-item:hover p,
+        .spectrum-item:hover .label {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .spectrum-item:hover h4 {
+            color: white;
+        }
+
+        .spectrum-badge {
+            display: inline-block;
+            font-size: 0.625rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border: 1px solid;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge--low {
+            color: #4a8c5c;
+            border-color: rgba(74, 140, 92, 0.4);
+        }
+
+        .badge--mid {
+            color: #8c7a4a;
+            border-color: rgba(140, 122, 74, 0.4);
+        }
+
+        .badge--high {
+            color: #8c4a4a;
+            border-color: rgba(140, 74, 74, 0.4);
+        }
+
+        .spectrum-item:hover .badge--low,
+        .spectrum-item:hover .badge--mid,
+        .spectrum-item:hover .badge--high {
+            color: rgba(255, 255, 255, 0.7);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .alt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .alt-card {
+            padding: 2.5rem 2rem;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            transition: background-color var(--transition), transform var(--transition);
+        }
+
+        .alt-card:hover {
+            background-color: var(--color-white);
+            transform: translateY(-3px);
+        }
+
+        .alt-icon {
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .spectrum-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .alt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav scrolled" id="main-nav">
+        <a href="index.html" class="nav-logo">
+            <img src="logo.svg" alt="Caravage Logo" class="nav-logo-img" />
+            <div class="nav-logo-divider"></div>
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">Caravage</span>
+                <span class="nav-logo-tagline">The Art of Investing</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="about.html" class="nav-link" data-page="about.html">About</a>
+            <a href="philosophy.html" class="nav-link" data-page="philosophy.html">Philosophy</a>
+            <a href="assets.html" class="nav-link active" data-page="assets.html">Asset Classes</a>
+            <a href="portfolio.html" class="nav-link" data-page="portfolio.html">Portfolio</a>
+            <a href="insights.html" class="nav-link" data-page="insights.html">Insights</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Contact</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="nav-mobile" id="mobile-nav">
+        <button class="nav-mobile-close" id="mobile-close">✕</button>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="philosophy.html" class="nav-link">Philosophy</a>
+        <a href="assets.html" class="nav-link">Asset Classes</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- ===== PAGE HERO (dark) ===== -->
+    <div class="asset-hero">
+        <div class="page-hero">
+            <div class="container--text">
+                <span class="label reveal">Two Core Pillars</span>
+                <h1 class="reveal reveal-delay-1">Asset Classes</h1>
+                <p class="reveal reveal-delay-2">
+                    Real estate and alternative investments — chosen for their ability to deliver long-term,
+                    inflation-protected, risk-adjusted returns for generations.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== REAL ESTATE ===== -->
+    <section class="section" style="background-color: var(--color-white);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Pillar I</span>
+                <h2>Building Wealth Through Real Assets</h2>
+                <p>Real estate forms the cornerstone of the Caravage portfolio. We believe in the enduring value of
+                    well-located, expertly managed properties.</p>
+            </div>
+
+            <div class="spectrum-bar reveal">
+                <div class="spectrum-item">
+                    <span class="spectrum-badge badge--low">Lower Risk</span>
+                    <h4 style="margin-bottom: 0.75rem;">Core</h4>
+                    <p style="font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.7;">Stabilized,
+                        income-generating properties in prime tier-1 city locations. Long-term holds with stable cash
+                        flow and capital preservation characteristics.</p>
+                    <ul style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Prime commercial offices</li>
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Grade-A residential</li>
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— High-street retail</li>
+                    </ul>
+                </div>
+                <div class="spectrum-item">
+                    <span class="spectrum-badge badge--mid">Balanced Risk</span>
+                    <h4 style="margin-bottom: 0.75rem;">Value-Add</h4>
+                    <p style="font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.7;">Properties with clear paths
+                        to enhanced value through active management, repositioning, and strategic capital improvements.
+                    </p>
+                    <ul style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Asset repositioning</li>
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Renovation projects</li>
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Lease-up strategies</li>
+                    </ul>
+                </div>
+                <div class="spectrum-item">
+                    <span class="spectrum-badge badge--high">Higher Return</span>
+                    <h4 style="margin-bottom: 0.75rem;">Opportunistic</h4>
+                    <p style="font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.7;">Ground-up construction and
+                        major repositioning projects in select markets. Higher risk with asymmetric capital appreciation
+                        potential.</p>
+                    <ul style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Ground-up development</li>
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Special situations</li>
+                        <li style="font-size: 0.75rem; color: var(--color-text-muted);">— Land assemblage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ALTERNATIVES ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Pillar II</span>
+                <h2>Beyond Traditional Markets</h2>
+                <p>We allocate capital to private market opportunities where we can leverage our network, expertise, and
+                    operational capabilities.</p>
+            </div>
+
+            <div class="alt-grid reveal">
+                <div class="alt-card">
+                    <span class="alt-icon">◈</span>
+                    <div class="label" style="margin-bottom: 0.75rem;">I</div>
+                    <h4 style="margin-bottom: 0.75rem;">Private Equity</h4>
+                    <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.7;">Control and
+                        significant minority positions in quality businesses with strong fundamentals and clear
+                        value-creation pathways.</p>
+                </div>
+                <div class="alt-card">
+                    <span class="alt-icon">◉</span>
+                    <div class="label" style="margin-bottom: 0.75rem;">II</div>
+                    <h4 style="margin-bottom: 0.75rem;">Private Credit</h4>
+                    <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.7;">Direct lending and
+                        specialty finance with attractive, current yield profiles that enhance portfolio income while
+                        maintaining capital protection.</p>
+                </div>
+                <div class="alt-card">
+                    <span class="alt-icon">◇</span>
+                    <div class="label" style="margin-bottom: 0.75rem;">III</div>
+                    <h4 style="margin-bottom: 0.75rem;">Real Assets</h4>
+                    <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.7;">Infrastructure,
+                        natural resources, and tangible asset-backed opportunities offering inflation linkage and low
+                        correlation to public markets.</p>
+                </div>
+                <div class="alt-card">
+                    <span class="alt-icon">◎</span>
+                    <div class="label" style="margin-bottom: 0.75rem;">IV</div>
+                    <h4 style="margin-bottom: 0.75rem;">Growth Capital</h4>
+                    <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.7;">Selected minority
+                        growth equity investments in exceptional companies at inflection points, where our operational
+                        network creates measurable advantage.</p>
+                </div>
+                <div class="alt-card">
+                    <span class="alt-icon">◐</span>
+                    <div class="label" style="margin-bottom: 0.75rem;">V</div>
+                    <h4 style="margin-bottom: 0.75rem;">Wine & Collectibles</h4>
+                    <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.7;">Tangible, passion
+                        assets with genuine scarcity, appreciation potential, and unique aesthetic value — a natural
+                        extension of our artful approach.</p>
+                </div>
+                <div class="alt-card">
+                    <span class="alt-icon">◑</span>
+                    <div class="label" style="margin-bottom: 0.75rem;">VI</div>
+                    <h4 style="margin-bottom: 0.75rem;">Consumer Brands</h4>
+                    <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.7;">Premium consumer
+                        and luxury brands with durable brand equity, loyal customer bases, and significant long-term
+                        value creation potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section section--dark">
+        <div class="container--text text-center">
+            <div class="reveal">
+                <span class="label" style="color: rgba(255,255,255,0.4);">Our Investments</span>
+                <h2 style="margin: 1.5rem 0; font-style: italic;">See Our Portfolio</h2>
+                <p style="margin-bottom: 2.5rem;">Explore the specific investments we have made across both asset class
+                    pillars.</p>
+                <a href="portfolio.html" class="btn btn--light">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo-white.svg" alt="Caravage Logo" class="footer-logo-img" />
+                        <span class="footer-logo-name">Caravage</span>
+                    </div>
+                    <p class="footer-tagline">The Art of Investing</p>
+                    <p
+                        style="font-size: 0.75rem; color: rgba(255,255,255,0.35); font-weight: 300; max-width: 260px; margin-top: 0.75rem; line-height: 1.7;">
+                        Multi-generational wealth preservation through strategic capital allocation.</p>
+                </div>
+                <div class="footer-offices">
+                    <div class="footer-office">
+                        <div class="footer-location-city">Paris</div>
+                        <div class="footer-location-detail">8 Rue de la Paix<br>75002 Paris,
+                            France<br><br>paris@caravage.ch</div>
+                    </div>
+                    <div class="footer-office">
+                        <div class="footer-location-city">Zurich</div>
+                        <div class="footer-location-detail">Bahnhofstrasse 12<br>8001 Zurich,
+                            Switzerland<br><br>zurich@caravage.ch</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom-row">
+                <nav class="footer-nav">
+                    <a href="about.html" class="footer-nav-link">About</a>
+                    <a href="philosophy.html" class="footer-nav-link">Philosophy</a>
+                    <a href="assets.html" class="footer-nav-link">Asset Classes</a>
+                    <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
+                    <a href="insights.html" class="footer-nav-link">Insights</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </nav>
+                <div class="footer-bottom-right">
+                    <p class="footer-copyright">© 2026 Caravage. All Rights Reserved.</p>
+                    <div class="footer-sub-links">
+                        <a href="#" class="footer-sub-link">Privacy</a>
+                        <a href="#" class="footer-sub-link">Legal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
