@@ -641,6 +641,13 @@ p {
     letter-spacing: 0.04em;
 }
 
+.logo-item-img {
+    max-height: 2.5rem;
+    max-width: 75%;
+    width: auto;
+    object-fit: contain;
+}
+
 .logo-item-sector {
     font-family: var(--font-sans);
     font-size: var(--size-xs);

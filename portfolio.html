@@ -58,6 +58,14 @@
             margin-bottom: 0.25rem;
         }
 
+        .portfolio-card-logo {
+            max-height: 2.75rem;
+            max-width: 160px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 0.25rem;
+        }
+
         .portfolio-card-sector {
             font-size: var(--size-xs);
             font-weight: 500;
@@ -87,7 +95,7 @@
 
         .portfolio-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5px;
             background-color: var(--color-border);
             border: 1.5px solid var(--color-border);
@@ -122,7 +130,7 @@
             }
 
             .portfolio-stats {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -187,10 +195,6 @@
         <div class="container">
             <div class="portfolio-stats reveal">
                 <div class="portfolio-stat">
-                    <div class="portfolio-stat-num">6+</div>
-                    <div class="portfolio-stat-label">Portfolio Companies</div>
-                </div>
-                <div class="portfolio-stat">
                     <div class="portfolio-stat-num">2</div>
                     <div class="portfolio-stat-label">Core Asset Classes</div>
                 </div>
@@ -215,7 +219,7 @@
             <div class="portfolio-grid reveal">
 
                 <div class="portfolio-card">
-                    <div class="portfolio-card-name">Eldora</div>
+                    <img src="Logo/Eldora.png" alt="Eldora" class="portfolio-card-logo" />
                     <div class="portfolio-card-sector">Web3 · Real World Assets · Blockchain</div>
                     <p>Pioneering on-chain asset management as a neutral aggregator for Real World Assets. Eldora
                         unifies access to diverse investment pools — real estate, bonds, credit — through a single
@@ -230,7 +234,7 @@
                 </div>
 
                 <div class="portfolio-card">
-                    <div class="portfolio-card-name">Drumee</div>
+                    <img src="Logo/Drumee.png" alt="Drumee" class="portfolio-card-logo" />
                     <div class="portfolio-card-sector">Cloud Infrastructure · SaaS · Productivity</div>
                     <p>A complete cloud desktop environment accessible from any device. Drumee integrates file
                         management, real-time collaboration, and extensible productivity tools — built on privacy-first
@@ -260,7 +264,7 @@
                 </div>
 
                 <div class="portfolio-card">
-                    <div class="portfolio-card-name">Eza Watches</div>
+                    <img src="Logo/EZA_Watches.png" alt="Eza Watches" class="portfolio-card-logo" />
                     <div class="portfolio-card-sector">Luxury Watches · Heritage Craftsmanship</div>
                     <p>A boutique mechanical watch brand reviving vintage aesthetics through modern precision.
                         Collections: Sealander, AirFighter, 1972 Diver. Accessible luxury for discerning collectors —
@@ -275,7 +279,7 @@
                 </div>
 
                 <div class="portfolio-card">
-                    <div class="portfolio-card-name">Greengage</div>
+                    <img src="Logo/greengage.png" alt="Greengage" class="portfolio-card-logo" />
                     <div class="portfolio-card-sector">Fintech · Digital Banking · B2B</div>
                     <p>UK-based digital banking platform delivering flexible payment solutions, lending, and custom
                         technology for modern enterprises — with seamless crypto on/off ramping. Regulatory-authorized
@@ -290,7 +294,7 @@
                 </div>
 
                 <div class="portfolio-card">
-                    <div class="portfolio-card-name">Chateau Shi</div>
+                    <img src="Logo/chateaushi.png" alt="Chateau Shi" class="portfolio-card-logo" />
                     <div class="portfolio-card-sector">Cultural Heritage · Web3 · Experiential</div>
                     <p>A revolutionary model merging digital innovation with physical heritage — exclusive access to 40+
                         global historical properties through Web3 technology. VIP membership, metaverse integration,
@@ -304,6 +308,10 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div class="text-center reveal" style="padding: 1.75rem 0 0.25rem; color: var(--color-text-muted); font-size: var(--size-xs); font-weight: 400; letter-spacing: var(--tracking-wider); text-transform: uppercase;">
+                And many more...
             </div>
         </div>
     </section>
