@@ -646,6 +646,8 @@ p {
     max-width: 65%;
     width: auto;
     object-fit: contain;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .logo-item-sector {
