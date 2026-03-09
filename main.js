@@ -74,16 +74,41 @@ const contactForm = document.querySelector('#contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    // 1. Get form values
+    const inquiry = document.querySelector('input[name="inquiry"]:checked').value;
+    const fullName = document.getElementById('name').value;
+    const org = document.getElementById('company').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    // 2. Create Subject
+    const subject = `[${inquiry}] Inquiry from ${fullName}`;
+
+    // 3. Create Body
+    let body = `Hello,%0D%0A%0D%0A`;
+    body += `You have a new inquiry from your website:%0D%0A%0D%0A`;
+    body += `Name: ${fullName}%0D%0A`;
+    if (org) body += `Organisation: ${org}%0D%0A`;
+    body += `Email: ${email}%0D%0A`;
+    if (phone) body += `Phone: ${phone}%0D%0A`;
+    body += `Message:%0D%0A${message}`;
+
+    // 4. Encode subject and message content
+    const encodedSubject = encodeURIComponent(subject);
+    const finalBody = body.replace(message, encodeURIComponent(message));
+
+    // 5. Open email client
+    const mailToLink = `mailto:theophane@caravage.ch?subject=${encodedSubject}&body=${finalBody}`;
+    window.location.href = mailToLink;
+
+    // Optional: UI feedback
     const btn = contactForm.querySelector('[type="submit"]');
     const originalText = btn.textContent;
-    btn.textContent = 'Message Sent';
-    btn.style.opacity = '0.7';
-    btn.disabled = true;
+    btn.textContent = 'Opening Mail Client...';
     setTimeout(() => {
       btn.textContent = originalText;
-      btn.style.opacity = '';
-      btn.disabled = false;
-      contactForm.reset();
     }, 3000);
   });
 }
