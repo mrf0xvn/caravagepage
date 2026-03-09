@@ -84,11 +84,11 @@ if (contactForm) {
     const message = document.getElementById('message').value;
 
     // 2. Create Subject
-    const subject = `[${inquiry}] Inquiry from ${fullName}`;
+    const subject = `[${inquiry}] Inquiry from Caravage.ch - ${fullName}`;
 
     // 3. Create Body
-    let body = `Hello,%0D%0A%0D%0A`;
-    body += `You have a new inquiry from your website:%0D%0A%0D%0A`;
+    let body = `Hello, Theophane`;
+    body += `I am reaching out to you from Caravage.ch%0D%0A%0D%0A`;
     body += `Name: ${fullName}%0D%0A`;
     if (org) body += `Organisation: ${org}%0D%0A`;
     body += `Email: ${email}%0D%0A`;
