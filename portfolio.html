@@ -124,6 +124,34 @@
             color: var(--color-text-muted);
         }
 
+        .portfolio-card--more {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 250px;
+            background-color: var(--color-bg);
+            transition: background-color var(--transition);
+        }
+
+        .portfolio-card--more:hover {
+            background-color: var(--color-white);
+        }
+
+        .portfolio-card-more-text {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-text-muted);
+            transition: color var(--transition);
+        }
+
+        .portfolio-card--more:hover .portfolio-card-more-text {
+            color: var(--color-navy);
+        }
+
         @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
@@ -134,9 +162,13 @@
             }
         }
 
-        @media (max-width: 1024px) and (min-width: 769px) {
+        @media (max-width: 1024px) {
             .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-card--more {
+                grid-column: span 1;
             }
         }
     </style>
@@ -312,11 +344,23 @@
                     </div>
                 </div>
 
-            </div>
+                <div class="portfolio-card">
+                    <img src="Logo/MedAI_Nex.svg" alt="MedAI Nex" class="portfolio-card-logo"
+                        style="max-height: 4rem; max-width: 200px;" />
+                    <div class="portfolio-card-sector">Health Technology · Healthcare AI</div>
+                    <p>The first AI-native middleware system for outpatient care, transforming fragmented clinics into predictive, proactive health hubs. Unifies clinical, operational, and revenue workflows into a single operating layer above legacy EHR systems.</p>
+                    <div
+                        style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="portfolio-card-type">Healthtech · AI · SaaS</span>
+                        <a href="https://www.medainex.com" target="_blank" rel="nofollow noreferrer"
+                            style="font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none;">medainex.com
+                            ↗</a>
+                    </div>
+                </div>
+                <div class="portfolio-card portfolio-card--more">
+                    <div class="portfolio-card-more-text">And many more...</div>
+                </div>
 
-            <div class="text-center reveal"
-                style="padding: 1.75rem 0 0.25rem; color: var(--color-text-muted); font-size: var(--size-xs); font-weight: 400; letter-spacing: var(--tracking-wider); text-transform: uppercase;">
-                And many more...
             </div>
         </div>
     </section>

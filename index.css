@@ -661,6 +661,25 @@ p {
     line-height: 1.5;
 }
 
+.logo-item--more {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    min-height: 100%;
+}
+
+.logo-item-more-text {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    transition: color var(--transition);
+}
+
+.logo-item--more:hover .logo-item-more-text {
+    color: var(--color-navy);
+}
+
 /* ── Investment Approach List ── */
 .approach-list {
     display: flex;
@@ -1263,6 +1282,11 @@ p {
 
     .logos-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo-item--more {
+        grid-column: span 1;
+        aspect-ratio: 1 / 0.7;
     }
 
     .offices-grid {
